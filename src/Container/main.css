@@ -1,0 +1,8 @@
+.main-post {
+    width: 100%;
+    align-content: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
