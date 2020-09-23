@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react';
 import { BlogContext } from '../context/list-context';
 import { Redirect } from 'react-router-dom';
 import './newpost.css';
+import axios from 'axios';
+
+
 const NewPost = () => {
 
     const [name, setName] = useState("");
@@ -12,18 +15,29 @@ const NewPost = () => {
 
     const addPost = useContext(BlogContext).addpost;
 
-    const submitHandler = (event) => {
-        event.preventDefault();
-        if (name.length !== 0 && content.length !== 0 && postedBy.length !== 0) {
-            addPost(name, content, postedBy);
+    // const submitHandler = (event) => {
+
+    //     event.preventDefault();
+    //     if (name.length !== 0 && content.length !== 0 && postedBy.length !== 0) {
+    //         addPost(name, content, postedBy);
+    //         setRedirect(true);
+    //     }
+    //     else {
+    //         setRedirect(false);
+    //     }
+    // }
+
+    const submitAxiosHandler = async (eve) => {
+        try {
+            eve.preventDefault();
+            axios.post("https://groceryapp-4a75b.firebaseio.com/posts.json", { name, content, postedBy })
             setRedirect(true);
         }
-        else {
-            setRedirect(false);
+        catch (error) {
+            alert(error.message)
         }
-
-
     }
+
     const changeTitle = (event) => {
         setName(event.target.value);
 
@@ -36,12 +50,12 @@ const NewPost = () => {
         setPostedBy(event.target.value);
     }
 
-    const isDisabled =() => {
+    const isDisabled = () => {
 
         if (name.length !== 0 && content.length !== 0 && postedBy.length !== 0) {
             return false
-         }
-         else return true
+        }
+        else return true
     }
 
     return (
@@ -51,13 +65,13 @@ const NewPost = () => {
                     <input autoFocus className="title" placeholder="Title" onChange={changeTitle}></input>
                 </div>
                 <div>
-                    <textarea  className="content" placeholder="Content" onChange={changeContent}></textarea>
+                    <textarea className="content" placeholder="Content" onChange={changeContent}></textarea>
                 </div>
                 <div>
                     <input className="postedBy" placeholder="PostedBy" onChange={changePostedBy}></input>
                 </div>
                 <div className="submitDiv">
-                    <button className="submitPost" type={onsubmit} disabled={isDisabled()} onClick={(eve)=>submitHandler(eve)}>Submit</button>
+                    <button className="submitPost" type={onsubmit} disabled={isDisabled()} onClick={(eve) => submitAxiosHandler(eve)}>Submit</button>
                     {redirect && <Redirect to="/" />}
                 </div>
             </form>
