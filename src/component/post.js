@@ -1,18 +1,30 @@
 import React from 'react';
+import './post.css';
 
-const post = ({ obj }) => {
+    const post = React.memo(({ obj }) => {
 
-    return (
-        <div>
-            <h2 style={{textAlign:"center"}}> {obj.name}</h2>
-            <p style={{textAlign:"center"}}> {obj.content}</p>
-            <h4 style={{textAlign:"center"}}>{obj.postedBy}</h4>
-        </div>
+        return (
+            <div className ="container">
+                <div className="nameContainer">
+                    <h2>Title: {obj.name}</h2>
+                   
+                    
+                </div>
+                
+                <div className="contentContainer">
+                    {obj.content}
+                </div>
+
+                <div className="postedByContainer">
+
+                    -{obj.postedBy}
+                </div>
+            </div>
 
 
-    )
+        )
 
-}
+    })
 
 
-export default post;
+    export default post;

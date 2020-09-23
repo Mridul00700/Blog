@@ -4,22 +4,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
-
 }
 
 .title {
     width: 500px;
     height: 30px;
     justify-content: center;
-    opacity: 60%;
     margin-top: 50px;
     border-radius: 15px;
     outline: none;
     padding-left: 5px;
     border: none;
-    box-shadow: 8px 5px #916cb8 ;
-    
+    background: rgb(196, 205, 245);
+    box-shadow: 4px 2.5px #916cb8;
 }
 
 .content {
@@ -27,44 +24,39 @@
     height: 250px;
     border-radius: 25px;
     outline: none;
-    opacity: 60%;
     margin-top: 20px;
     padding-left: 10px;
     padding-top: 10px;
+    background: rgb(196, 205, 245);
     border: none;
-    box-shadow: 10px 5px #916cb8 ;
-    
+    box-shadow: 5px 2.5px #916cb8;
 }
-
 
 .postedBy {
     width: 500px;
     height: 30px;
     border-radius: 15px;
-    opacity: 60%;
     outline: none;
+    background: rgb(196, 205, 245);
     padding-left: 5px;
     border: none;
     margin-top: 20px;
-    box-shadow: 8px 5px #916cb8 ;
-
+    box-shadow: 4px 2.5px #916cb8;
 }
+
 .submitDiv {
     display: flex;
     justify-content: center;
-
 }
 
 .submitPost {
-
     width: 60px;
     height: 25px;
     text-align: center;
-    opacity: 82%;
     margin-top: 20px;
-    box-shadow: 5px 3px #916cb8 ;
+    box-shadow: 5px 3px #916cb8;
+    background: rgb(196, 205, 245);
     border-radius: 5px;
     border: none;
     outline: none;
-    
 }

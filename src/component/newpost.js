@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { BlogContext } from '../context/list-context';
+import React, { useState } from 'react';
+// import { BlogContext } from '../context/list-context';
 import { Redirect } from 'react-router-dom';
 import './newpost.css';
 import axios from 'axios';
@@ -13,7 +13,7 @@ const NewPost = () => {
     const [redirect, setRedirect] = useState(false);
 
 
-    const addPost = useContext(BlogContext).addpost;
+    // const addPost = useContext(BlogContext).addpost;
 
     // const submitHandler = (event) => {
 
