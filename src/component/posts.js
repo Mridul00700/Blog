@@ -5,7 +5,7 @@ import uuid from 'react-uuid'
 import axios from 'axios';
 
 
-const Posts = React.memo(() => {
+const Posts = () => {
 
     // const post = useContext(BlogContext).blogPost;
     const [posts, setPosts] = useState([]);
@@ -14,7 +14,7 @@ const Posts = React.memo(() => {
         getPosts();
     }, [display]);
 
-    const getPosts = useCallback(async () => {
+    const getPosts = async () => {
         try {
             const response = await axios.get("https://groceryapp-4a75b.firebaseio.com/posts.json");
             const post = [];
@@ -31,7 +31,7 @@ const Posts = React.memo(() => {
             alert(error.message);
             setDisplay(false);
         }
-    });
+    };
 
     return (
         <div>
@@ -40,7 +40,7 @@ const Posts = React.memo(() => {
             </ul>
         </div>
     )
-});
+};
 
 
 export default Posts;

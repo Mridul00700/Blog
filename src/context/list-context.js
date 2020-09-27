@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 
-export const BlogContext = React.createContext([]);
+export const BlogContext = React.createContext();
 
 
 
 
 export default props => {
-    const [blogPost, setBlogPosts] = useState([{name: "Mridul", content:"djwodjw0d", postedBy:"mridul"},
-    {name: "Achyut", content:"djwodjw0sdsdd", postedBy:"achyut"}]);
+    // const [user, setUser] = useState("");
+    const [email, setEmail] = useState(null);
+    // const [password, setPassword] = useState("");
 
 
-    const addpost = (name, content, postedBy) => {
-        setBlogPosts( current => {
-            
-            return current.concat({name: name, content:content, postedBy:postedBy})
-        })
+    const verifyLogin = (email) => {
+      
+        setEmail(email);
+        
     }
 
     return(
-        <BlogContext.Provider value={{blogPost, addpost: addpost}}>
+        <BlogContext.Provider value={{email, setLogin: verifyLogin}}>
             {props.children}
         </BlogContext.Provider>
     );

@@ -5,15 +5,17 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 import BlogProvider from './context/list-context';
-
+import { CssBaseline } from '@material-ui/core';
 
 
 
 ReactDOM.render(
     <BlogProvider>
+    <CssBaseline> 
     <Router>
     <App />
     </Router>
+    </CssBaseline> 
     </BlogProvider>,
   document.getElementById('root')
 );

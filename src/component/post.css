@@ -7,24 +7,22 @@
     box-sizing: border-box;
     width: 50%;
     overflow-wrap: break-word;
-
-
 }
 
 .nameContainer {
-    
-
+    font-family: 'Nunito', sans-serif;
 }
 
 .contentContainer {
     text-align: left;
     padding: 10px;
     margin: 20px auto;
-    
     box-sizing: border-box;
     width: 100%;
+    font-family: 'Nunito', sans-serif;
 }
 
 .postedByContainer {
     text-align: right;
+    font-family: 'Nunito', sans-serif;
 }
