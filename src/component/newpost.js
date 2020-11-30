@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-// import { BlogContext } from '../context/list-context';
+import React, { useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import './newpost.css';
 import axios from 'axios';
@@ -11,7 +10,7 @@ const NewPost = () => {
     const [content, setContent] = useState("");
     const [postedBy, setPostedBy] = useState("");
     const [redirect, setRedirect] = useState(false);
-
+    
 
     // const addPost = useContext(BlogContext).addpost;
 
